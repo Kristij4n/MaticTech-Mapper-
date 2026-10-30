@@ -2,6 +2,18 @@
 
 A local Windows desktop photogrammetry application. It turns overlapping drone photographs (such as DJI JPGs) into a georeferenced dense point cloud, textured 3D mesh, orthomosaic and DSM, and provides tools to inspect, measure and export the results.
 
+## Tested hardware
+
+MaticTechMapper has been tested **only on an Alienware 15 laptop from 2015**. Other hardware has not been tested.
+
+| Component | Specification |
+| --- | --- |
+| CPU | Intel Core i7-4720HQ @ 2.60 GHz (4 cores, 8 logical processors) |
+| Memory | 16 GB DDR3, 1600 MHz |
+| GPU | NVIDIA GeForce GTX 970M, 3 GB dedicated memory |
+| Integrated graphics | Intel HD Graphics 4600 |
+| Storage | SSD and HDD (both RAID) |
+
 > **Development preview.** Output accuracy is not independently certified. Verify results against your own survey controls before relying on them for production work.
 
 ## Getting started
