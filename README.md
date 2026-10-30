@@ -8,10 +8,13 @@ A local Windows desktop photogrammetry application. It turns overlapping drone p
 
 ### Install and run
 
-- **Portable:** extract the full application folder (including `_internal`) and run `Start_MaticTechMapper_Portable.cmd`. No Python installation is required.
-- **Setup EXE:** close Mapper, then run the installer. It packages the same application and bundled processing runtime.
-- Projects are stored in `D:/MaticTechMapper/MaticTechMapperData`. The folder is created when needed. Use `--data-dir` to select a different workspace.
-- The local service binds only to the loopback address. Opening Mapper starts it automatically, so no manual server command is needed.
+1. Close Mapper if it is running.
+2. Run the setup file, `MaticTechMapper-0.114.0-preview-windows-x64-setup.exe`, and follow the installer.
+3. Start MaticTechMapper from the Start menu or desktop shortcut.
+
+The installer includes the application and its bundled processing runtime, so no Python installation is required. Updating works the same way: close Mapper and run the newer setup file. Existing surveys are kept.
+
+Projects are stored in `D:/MaticTechMapper/MaticTechMapperData`. The folder is created when needed. Opening Mapper starts its local service automatically, and the service listens only on the loopback address.
 
 If Microsoft Edge WebView2 or .NET is missing, a **System requirements** window opens first. Click **Install** to download the official Microsoft installer (internet access is needed, and Windows may ask for administrator approval or a reboot), then **Recheck** and **Open mapper**. The window is also available from the app header or with `MaticTechMapper.exe --dependencies`. An optional NVIDIA driver link is provided separately.
 
@@ -124,7 +127,7 @@ Help is built in: press **F1** for explanations, hover controls for tooltips, or
 
 **0.66** makes all detected CPU threads available, refreshes the RAM ceiling before each phase and increases GPU matching headroom, without lowering image quality. See [PERFORMANCE_CONTROLS.md](PERFORMANCE_CONTROLS.md).
 
-**0.65** replaces the CPU/RAM/GPU sliders with automatic resource detection and makes the portable Windows application the primary delivery.
+**0.65** replaces the CPU/RAM/GPU sliders with automatic resource detection.
 
 **0.64** fixes a feature-extraction memory crash, removes the dashboard ZIP restore control, separates **Process DJI map** from the image-table scroll area and refreshes failed-run status in the header. See [STARTUP_FIX.md](STARTUP_FIX.md).
 
@@ -145,7 +148,3 @@ Earlier previews added original-photo inspection ([PHOTO_INSPECTION.md](PHOTO_IN
 - PLY meshes cut by an edit lose faces crossing the selection, and watertightness is not guaranteed.
 - Rolling-shutter correction, orthomosaic seamline editing, thermal and multispectral calibration, and a signed installer are not yet available.
 - Total disk and time forecasts for a run are approximate. Make sure the working drive has plenty of free space; Mapper stops a run and keeps its checkpoints if the reserve falls too low.
-
-## Building from source
-
-Install `requirements-build.txt`, prepare the native runtime folders and run `python desktop.py`. `build_windows.ps1` creates the executable and the accompanying license and source files. Distribute the application folder together with the OpenMVS corresponding source and third-party notices, and exclude project data from release packages.
