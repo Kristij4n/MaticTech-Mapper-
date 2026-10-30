@@ -2,6 +2,10 @@
 
 A local Windows desktop photogrammetry application. It turns overlapping drone photographs (such as DJI JPGs) into a georeferenced dense point cloud, textured 3D mesh, orthomosaic and DSM, and provides tools to inspect, measure and export the results.
 
+Consider to support this project on https://ko-fi.com/matictechsystems
+
+Web: https://matictechsystems.com/ Web MaticTech Mapper: https://mapper.matictechsystems.com/
+
 ## Tested hardware
 
 MaticTechMapper has been tested **only on an Alienware 15 laptop from 2015**. Other hardware has not been tested.
