@@ -8,9 +8,8 @@ A local Windows desktop photogrammetry application. It turns overlapping drone p
 
 ### Install and run
 
-1. Close Mapper if it is running.
-2. Run the setup file, `MaticTechMapper-0.114.0-preview-windows-x64-setup.exe`, and follow the installer.
-3. Start MaticTechMapper from the Start menu or desktop shortcut.
+1. Run the setup file, `MaticTechMapper-0.114.0-preview-windows-x64-setup.exe`, and follow the installer.
+2. Start MaticTechMapper from the Start menu or desktop shortcut.
 
 The installer includes the application and its bundled processing runtime, so no Python installation is required. Updating works the same way: close Mapper and run the newer setup file. Existing surveys are kept.
 
