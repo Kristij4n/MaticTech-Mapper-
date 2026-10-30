@@ -14,7 +14,7 @@ A local Windows desktop photogrammetry application. It turns overlapping drone p
 
 The installer includes the application and its bundled processing runtime, so no Python installation is required. Updating works the same way: close Mapper and run the newer setup file. Existing surveys are kept.
 
-Projects are stored in `D:/MaticTechMapper/MaticTechMapperData`. The folder is created when needed. Opening Mapper starts its local service automatically, and the service listens only on the loopback address.
+Opening Mapper starts its local service automatically, and the service listens only on the loopback address.
 
 If Microsoft Edge WebView2 or .NET is missing, a **System requirements** window opens first. Click **Install** to download the official Microsoft installer (internet access is needed, and Windows may ask for administrator approval or a reboot), then **Recheck** and **Open mapper**. The window is also available from the app header or with `MaticTechMapper.exe --dependencies`. An optional NVIDIA driver link is provided separately.
 
@@ -96,48 +96,6 @@ Help is built in: press **F1** for explanations, hover controls for tooltips, or
 - DSM contours as GeoJSON (WGS84), projected XYZ CSV and 3D DXF. Set drawing units to metres in the receiving CAD application.
 - Self-contained HTML reports for browser printing, and log export.
 - Raster, orthomosaic and DSM publication is staged and journaled, so a failed write keeps the previous products.
-
-## Update history
-
-**0.105** repairs independent camera-group calibration and landmark conversion. Resume a saved failed dataset to reuse its High-detail feature and matching caches. A validated camera export is published after the geometry checks pass. See [SFM_COMPONENTS_0.105.md](SFM_COMPONENTS_0.105.md).
-
-**0.104** adds official DGU imagery selection and fresh visible-area detail when zooming the comparison. It works with completed surveys, so no new mapping run is needed. See [DGU_IMAGERY_0.104.md](DGU_IMAGERY_0.104.md).
-
-**0.99** fixes GUI startup recovery. Mapper starts its embedded local service, checks readiness before the native window opens and reconnects after a failed first request. The first survey load has a longer timeout, and Help waits for the connection. See [GUI_STARTUP_FIX_0.99.md](GUI_STARTUP_FIX_0.99.md).
-
-**0.94** adds surface colour blending across all model parts. Geometry, UVs, DSM and saved measurements are unchanged, and no full remapping is required. See [TEXTURE_CONTINUITY_0.94.md](TEXTURE_CONTINUITY_0.94.md).
-
-**0.93** recovers grey triangles, reduces photo joins on planar surfaces and adds a denser point overlay with display-size controls. No full remapping is required. See [PHOTO_QUALITY_0.93.md](PHOTO_QUALITY_0.93.md).
-
-**0.92** repairs missing photo assignments and colour seams. Visibility is checked against the complete model, and no new mapping run is needed. See [WHOLE_MODEL_TEXTURE_FIX_0.92.md](WHOLE_MODEL_TEXTURE_FIX_0.92.md).
-
-**0.89** fixes the Original-resolution depth failure with serialized GPU estimation, bounded geometric groups, immutable checkpoints and no silent CPU fallback. Use **Resume previous run** to continue at fusion. See [DEPTH_RECOVERY_0.89.md](DEPTH_RECOVERY_0.89.md).
-
-**0.88** adds cleaner original-photo texturing with calibrated image windows and full-photo recovery, plus ortho-image repair at existing heights. See [QUALITY_UPDATE_0.88.md](QUALITY_UPDATE_0.88.md).
-
-**0.86** adds automatic texturing-engine selection from calibrated view overlap, original-resolution recovery for unsupported faces and verified texture checkpoints. See [TEXTURE_SPEED_0.86.md](TEXTURE_SPEED_0.86.md).
-
-**0.83** adds permanent Help, F1 explanations, tooltips and the twelve-step guide, plus distinct colours for points, lines, polygons, volumes, cut and fill. See [WINDOWS_INSTALLATION.md](WINDOWS_INSTALLATION.md), [LAPTOP_QUICK_START.md](LAPTOP_QUICK_START.md) and [HELP_WORKFLOW.md](HELP_WORKFLOW.md).
-
-**0.81** improves viewer response and mouse operation: navigation stays active while measuring, annotation selection keeps the existing mesh, mesh parsing runs in a local worker, idle drawing stops and vertex handles are editable. See [VIEWER_RESPONSE.md](VIEWER_RESPONSE.md).
-
-**0.80** reworks the measurement workflow with labelled tools, automatic two-point distances, multi-vertex completion, live feedback, saved measurements and six volume base choices. See [MEASUREMENT_WORKFLOW.md](MEASUREMENT_WORKFLOW.md).
-
-**0.67** adds confirmed, recoverable deletion for inactive datasets. Active processing, scheduled jobs and imports are protected. See [PROJECT_BROWSER.md](PROJECT_BROWSER.md).
-
-**0.66** makes all detected CPU threads available, refreshes the RAM ceiling before each phase and increases GPU matching headroom, without lowering image quality. See [PERFORMANCE_CONTROLS.md](PERFORMANCE_CONTROLS.md).
-
-**0.65** replaces the CPU/RAM/GPU sliders with automatic resource detection.
-
-**0.64** fixes a feature-extraction memory crash, removes the dashboard ZIP restore control, separates **Process DJI map** from the image-table scroll area and refreshes failed-run status in the header. See [STARTUP_FIX.md](STARTUP_FIX.md).
-
-**0.63** adds output-boundary drawing on original DJI camera GPS before reconstruction. See [PROCESSING_REGION.md](PROCESSING_REGION.md).
-
-**0.62** adds saved projected output boundaries for the selected cloud, textured mesh, orthomosaic and DSM.
-
-**0.61** adds elevation profiles from saved lines, with CSV export. See [LINE_PROFILES.md](LINE_PROFILES.md).
-
-Earlier previews added original-photo inspection ([PHOTO_INSPECTION.md](PHOTO_INSPECTION.md)), PLY face-aware editing and export, full-cloud exchange exports, orthomosaic region editing, contour export for visible source cells, raster comparison stacks, camera calibration groups and terrain-reference volumes.
 
 ## Known limitations
 
